@@ -1,0 +1,15 @@
+input[type=submit]{
+    background-color: greenyellow;
+    color: white;
+    padding: 5px;
+    border-radius: 25px;
+    border:2px solid greenyellow;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(109, 160, 32);
+}
+
+input[type=submit]:focus {
+    background-color: greenyellow;
+}
