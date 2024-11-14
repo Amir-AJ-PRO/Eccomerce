@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
     'account.apps.AccountConfig',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -123,6 +124,13 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 
+# Media Files
+
+#MEDIA_URL = '/media/'
+#
+#MEDIA_ROOT = BASE_DIR / 'media'
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
@@ -131,3 +139,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 AUTH_USER_MODEL = 'account.User'
+
+
+# Abr Aevan Cloud
+DEFAULT_FILE_STORAGE = "storages.backends.s3.S3Storage"
+AWS_ACCESS_KEY_ID = '4206998b-d3fd-49a6-afab-485d85d45856'
+AWS_SECRET_ACCESS_KEY = 'f30c7859ac5f2a50f6db61b274719ba5691c665cf5a9c792a4204a1d97a1d907'
+AWS_S3_ENDPOINT_URL = 'https://s3.ir-thr-at1.arvanstorage.ir'
+AWS_STORAGE_BUCKET_NAME = 'janigoshop'
+AWS_SERVICE_NAME = 's3'
+AWS_S3_FILE_OVERWRITE = False
+
+AWS_LOCAL_STORAGE = f'{BASE_DIR}/aws/'

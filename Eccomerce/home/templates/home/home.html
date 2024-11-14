@@ -1,7 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-    <h1>Hello</h1>
-
+    {% for product in products %}
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{ product.image.url }}" alt=" {{product.name}} image">
+            <div class="card-body">
+                <a href="{{ product.get_absolute_url }}" class="card-title">{{product.name}}</a>
+                <p class="card-text">{{ product.description | truncatechars:8 }} </p>
+                <a href="{{ product.get_absolute_url }}" class="btn btn-primary">Go Detail</a>
+            </div>
+        </div>
+      {% endfor %}
 {% endblock %}
